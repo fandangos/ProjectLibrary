@@ -9,46 +9,44 @@
     <script src="javascript.js" defer></script>
   </head>
   <body>
-     <form id="form" onsubmit="addBookToLibrary(event)">
-          <div id="popup">
-            <button type="button" id="closebtn">X</button>
-            <div id="popheader">
-              <p>Add your book description</p>
-            </div>
-            <div id="addbooktitle">
-              <label for="addtitle">Title:</label>
-              <input type="text" id="addtitle" name="addtitle" required />
-              <p class="required" id="requiredtitle">*Book title is required</p>
-            </div>
-            <div id="addbookauthor">
-              <label for="addauthor">Author:</label>
-              <input type="text" id="addauthor" name="addauthor" required />
-              <p class="required" id="requiredauthor">
-                *Book author is required
-              </p>
-            </div>
-            <div id="addbookpages">
-              <label for="addpages">Number of pages:</label>
-              <input
-                type="number"
-                id="addpages"
-                name="addpages"
-                size="6"
-                required
-              />
-              <p class="required" id="requiredpages">
-                *Number of pages is required
-              </p>
-            </div>
-            <div id="addbookread">
-              <label for="addread">Read yet:</label>
-              <input type="checkbox" id="addread" name="addread" />
-            </div>
-            <div id="buttonarea">
-              <button type="submit" id="submit">ADD</button>
-            </div>
-          </div>
-        </form>
+    <form id="form" onsubmit="addBookToLibrary(event)">
+      <div id="popup">
+        <button type="button" id="closebtn">X</button>
+        <div id="popheader">
+          <p>Add your book description</p>
+        </div>
+        <div id="addbooktitle">
+          <label for="addtitle">Title:</label>
+          <input type="text" id="addtitle" name="addtitle" required />
+          <p class="required" id="requiredtitle">*Book title is required</p>
+        </div>
+        <div id="addbookauthor">
+          <label for="addauthor">Author:</label>
+          <input type="text" id="addauthor" name="addauthor" required />
+          <p class="required" id="requiredauthor">*Book author is required</p>
+        </div>
+        <div id="addbookpages">
+          <label for="addpages">Number of pages:</label>
+          <input
+            type="number"
+            id="addpages"
+            name="addpages"
+            size="6"
+            required
+          />
+          <p class="required" id="requiredpages">
+            *Number of pages is required
+          </p>
+        </div>
+        <div id="addbookread">
+          <label for="addread">Read yet:</label>
+          <input type="checkbox" id="addread" name="addread" />
+        </div>
+        <div id="buttonarea">
+          <button type="submit" id="submit">ADD</button>
+        </div>
+      </div>
+    </form>
     <div id="container">
       <div id="header">
         <div id="headertext">
@@ -58,8 +56,7 @@
       <div id="nav">
         <button type="button" id="addbook">Add book</button>
       </div>
-      <div id="main">
-      </div>
+      <div id="main"></div>
       <div id="footer">
         <div id="footertext">Vitor DallAcqua - 2023</div>
       </div>

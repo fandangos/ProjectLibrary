@@ -40,8 +40,10 @@ submitBtn.addEventListener("mouseup", (event) => {
 
 // end of PopUp code area
 
+// Create library array
 const myLibrary = [];
 
+// Create Book constructor
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
@@ -49,15 +51,22 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+// Add function to remove book div by ID and
+// remove book from library array
 function removeBook(index, id) {
   document.getElementById(id).remove();
   myLibrary.splice(myLibrary.indexOf(index), 1);
 }
 
+// Render book into page, check read status 
+// and assign button functions to remove and
+// change read status
+
 function renderBook(book, index) {
   const main = document.getElementById("main");
   const div = document.createElement("div");
   const removeBtn = document.createElement("button");
+  const readBtn = document.createElement("button");
 
   div.className = "book";
   div.id = index;
@@ -65,20 +74,29 @@ function renderBook(book, index) {
   div.textContent += `${book.author} \r\n`;
   div.textContent += `${book.pages} pages \r\n`;
   if (book.read) {
-    div.textContent += "Book read \r\n";
+    readBtn.innerText = "READ";
+    readBtn.setAttribute("class", "readbtnyes");
   } else {
-    div.textContent += "Not read yet"
+    readBtn.innerText = "NOT READ";
+    readBtn.setAttribute("class", "readbtnno");
   }
 
   main.appendChild(div);
+  div.appendChild(readBtn);
 
   removeBtn.setAttribute("class", "deletebtn");
   div.appendChild(removeBtn);
-    removeBtn.onclick = () => {
-      removeBook(book, div.id);
-    };
+  removeBtn.onclick = () => {
+    removeBook(book, div.id);
+  };
+  readBtn.onclick = () => {
+    book.read = !book.read;
+    createBook();
+  };
 }
 
+// Remove all books, read from array
+// Create all books to be synced to the array
 function createBook() {
   document.getElementById("main").textContent = "";
 
@@ -87,6 +105,8 @@ function createBook() {
   }
 }
 
+// Check the submit event from html form
+// add book to the array and render to the UI
 function addBookToLibrary(event) {
   event.preventDefault();
 
