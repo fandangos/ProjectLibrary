@@ -14,3 +14,5 @@ What I've learned:
 - Simple management of an object database
 
 The trash icon SVG from [Material Design Icons](https://materialdesignicons.com/)
+
+See it live [HERE](https://fandangos.github.io/ProjectLibrary/)
